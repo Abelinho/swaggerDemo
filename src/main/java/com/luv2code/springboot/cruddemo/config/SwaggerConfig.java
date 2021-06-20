@@ -27,7 +27,7 @@ public class SwaggerConfig {
 				.paths(PathSelectors.any())//specify the controller  that you wanna expose, using their endpoint pattern(antpattern)
 				.build();//build the docket
 	}
-	
+	//
 	//swagger metadata url:http://localhost:8080/v2/api-docs
 	//swagger UI url:http://localhost:8080/swagger-ui.html
 	
