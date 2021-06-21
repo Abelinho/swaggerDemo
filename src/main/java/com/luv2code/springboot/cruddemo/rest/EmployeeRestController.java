@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.luv2code.springboot.cruddemo.entity.EmployeeDetails;
 import com.luv2code.springboot.cruddemo.service.EmployeeService;
 
 @RestController
@@ -24,6 +26,18 @@ public class EmployeeRestController {
 	@Autowired
 	public EmployeeRestController(EmployeeService theEmployeeService) {
 		employeeService = theEmployeeService;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET,path = "/helloworld")
+	public String helloWorld() {
+		
+		return "hello peeps";
+	}
+	
+	@GetMapping("/helloworldbean")
+	public EmployeeDetails helloWorldBean() {
+		
+		return new EmployeeDetails("Abel", "Ikeji", "Manchester");
 	}
 	
 	// expose "/employees" and return list of employees
